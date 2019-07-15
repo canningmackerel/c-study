@@ -16,7 +16,7 @@ int main(void){
 }
 
 int randomPass(){
-     return rand() % 9;
+     return rand() % 10;
 }
 
 
