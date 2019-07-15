@@ -12,6 +12,7 @@ int main(void){
     int c = randomPass();
     int d = randomPass();
     printf("%d%d%d%d\n",a,b,c,d);
+    exit(1);
 }
 
 int randomPass(){
