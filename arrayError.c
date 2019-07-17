@@ -6,11 +6,11 @@ int main(void) {
     
      /* これはダメ */
      // cptgt = ary;
+     
+     /* やるならこう */
      for (int i = 0; i < 3; i++) {
          cptgt[i] = ary[i];
      }
-
-     /* やるならこう */
      for (int i = 0; i < 3; i++) {
          printf("%c", cptgt[i]);
      }
