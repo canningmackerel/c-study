@@ -11,25 +11,18 @@ int main(void){
          EARTH
      };
 
+    const char GEM_CHARS[] = {'$', '*', '@', '#'};
+
     int gems[10] = {};
      for (int i = 0; i < 10; i++){
          int gemType = rand() % 4;
-         switch (gemType) {
-            case FIRE:
-                printf("$");
-                break;
-            case WATER:
-                printf("*");
-                break;
-            case WIND:
-                printf("@");
-                break;
-            case EARTH:
-                printf("#");
-                break;
-        }
+         gems[i] = gemType; 
      }
 
-     printf(" ");
+     for (int i = 0; i < 10; i++){
+         printf("%c", GEM_CHARS[gems[i]]);
+     }
+
+     printf("\n");
      exit(1);
 }
