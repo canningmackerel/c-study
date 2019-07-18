@@ -15,5 +15,6 @@ int main(void){
          answer[i] = rand() % 9;
      }
 
+     // デバッグ
      printf("%d%d%d\n",answer[0],answer[1],answer[2]);
 }
