@@ -3,7 +3,7 @@
 #include <time.h>
 
 int main(void){
-     printf("***数宛てゲーム***\n->3桁の数を当ててください。\n>");
+     printf("***数宛てゲーム***\n>3桁の数を当ててください。\n\n");
      
      typedef char String[1024];
      int answer[3];
@@ -14,15 +14,26 @@ int main(void){
      for (int i = 0; i < 3; i++){
          answer[i] = rand() % 9;
      }
+
+     // 入力受付処理
+     char *errptr;
+     int inputcheck;
      for (int i = 0; i < 3; i++){
-         scanf("%s", input[i]);
          printf(">");
+         printf("%d桁目？ >", i + 1);
+         scanf("%s", input[i]);
+         // atoiはエラー処理できない。
+         inputcheck = strtol(input[i], &errptr, 10);
+         if (*errptr != 0){
+             printf("error ! not number : %s\n", errptr);
+             exit(1);
+         }
      }
      
+     // ヒット＆ブロー集計処理
      int hitcount = 0;
      int blow = 0;
      for (int i = 0; i < 3; i++){
-            
      }
 
      // デバッグ
