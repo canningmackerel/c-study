@@ -52,6 +52,7 @@ int main(void){
             for (int j = 2; 0 <= j; j--){
                  if (i == j && inputnumbers[i] == answer[j]){
                      hitcount+=1;
+                     continue;
                  } else if (inputnumbers[i] == answer[j]){
                      blowcount+=1;
                  }
@@ -67,6 +68,7 @@ int main(void){
              printf("error\n");
              exit(1);
         } else if (inputcheck == 0){
+             printf("正解は%d%d%dでした。\n", answer[0], answer[1], answer[2]);
              exit(1);
         }
     
