@@ -24,10 +24,12 @@ int main(void){
      char *errptr;
      int inputcheck;
      for (int i = 2; 0 <= i; i--){
+         // 「123」とあったら、1桁目は3だから、配列を通常の逆順で回す。
          printf(">");
          printf("%d桁目？ >", 3 - i);
          scanf("%s", &inputstring);
          // 入力チェック 
+         // 一時変数は配列ではなくアドレス演算子で渡す。
          inputcheck = strtol(inputstring, &errptr, 10);
          if (*errptr != 0){
              printf("error ! not number : %s\n", errptr);
@@ -38,18 +40,22 @@ int main(void){
          }
          inputnumbers[i] = inputcheck;
      }
+
+     // デバッグ
+     //printf("%d%d%d\n",inputnumbers[0],inputnumbers[1],inputnumbers[2]);
      
      // ヒット＆ブロー集計処理
      int hitcount = 0;
-     int blow = 0;
+     int blowcount = 0;
      for (int i = 2; 0 <= i; i--){
-        if (inputnumbers[i] == answer[i]){
-             hitcount+=1;
-        }
-        for (int j = 0; j < 3; j++){
-             
+        for (int j = 2; 0 <= j; j--){
+             if (i == j && inputnumbers[i] == answer[j]){
+                 hitcount+=1;
+             } else if (inputnumbers[i] == answer[j]){
+                 blowcount+=1;
+             }
         } 
     }
-    printf("%d", hitcount);
+    printf("入力した数字：%d%d%d／ヒット：%d／ブロー：%d\n", inputnumbers[0], inputnumbers[1], inputnumbers[2], hitcount, blowcount);
 
 }
