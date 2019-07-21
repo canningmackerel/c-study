@@ -63,7 +63,6 @@ int main(void){
         printf("continue ? : Yes(1)/No(0)");
         scanf("%s", &inputstring);
         inputcheck = strtol(inputstring, &errptr, 10);
-        // 想定は1or0なので+1して0以下ならエラー
         if (*errptr != 0 || !(inputcheck  == 0 | inputcheck == 1)) {
              printf("error\n");
              exit(1);
