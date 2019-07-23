@@ -20,8 +20,8 @@ void main(void) {
          .b = 20
      };
 
-     testFuncA(a);
-     testFuncB(b);
+     a = testFuncA(a);
+     b = testFuncB(b);
 
      printf("%d%d\n", a.a, b.b);
      exit(1);
