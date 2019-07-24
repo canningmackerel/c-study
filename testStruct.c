@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+// 構造体の書き方、渡し方
 struct testStructA {
      int a;
 };
