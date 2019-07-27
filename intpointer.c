@@ -12,9 +12,11 @@ int main(void) {
     long addrLA = (long)&a;
     printf("variable a address conbert long type is :%d\n", addrLA);
 
+    printf("%d\n", addrA[0]);
+    printf("%d\n", *(addrA + 0));
 
-    printIntByAddress(&a);
-    printIntByAddress(addrA);
+    //printIntByAddress(&a);
+    //printIntByAddress(addrA);
 
     // 以下は不可
     // int *zero = 0;
