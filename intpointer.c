@@ -12,6 +12,12 @@ int main(void) {
     long addrLA = (long)&a;
     printf("variable a address conbert long type is :%d\n", addrLA);
 
+    // 配列型変数はポインタ
+    int b[3] = {1, 2, 3};
+    printf("%p\n", b);
+    // array[i]でその型のsizeメモリ上から読む。それのアドレスだから同じ。
+    printf("%p\n", &b[0]);
+
     printf("%d\n", addrA[0]);
     printf("%d\n", *(addrA + 0));
 
